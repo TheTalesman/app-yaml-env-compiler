@@ -14,7 +14,7 @@ import (
 func main() {
 	fmt.Println("Ready to compile ...")
 	
-	filename, _ := filepath.Abs("app.yaml")
+	filename, _ := filepath.Abs("preview.yaml")
 	yamlFile, err := ioutil.ReadFile(filename)
 	if err != nil {
 		panic(err)
@@ -57,7 +57,7 @@ func main() {
 
 	out, err := yaml.Marshal(mapResult)
 	// write the whole body at once
-	err = ioutil.WriteFile("app.yaml", out, 0644)
+	err = ioutil.WriteFile("preview.yaml", out, 0644)
 	if err != nil {
 		panic(err)
 	}
